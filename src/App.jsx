@@ -7,19 +7,13 @@ function App() {
 
   useEffect(() => {
     const editor = editorRef.current;
-    // do thing ....
+    // do thing
   }, [])
 
   return (
     <>
       <input type="hidden" id="trix" />
       <trix-editor ref={editorRef} input="trix"></trix-editor>
-      <div>
-        <span>Result :</span>
-        <div>
-          {message}
-        </div>
-      </div>
     </>
   );
 }
