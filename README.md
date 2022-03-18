@@ -1,3 +1,3 @@
-# Slate POC
+# Pell POC
 
-A simple Slate js editor to demonstrate HTML serialization
+A simple pell editor to demonstrate HTML serialization
