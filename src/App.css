@@ -1,0 +1,79 @@
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.result-container {
+  margin: auto;
+  max-width: 800px;
+}
+
+.result-container textarea {
+  width: 800px;
+  min-height: 400px;
+  display: block;
+}
+
+.trix-container {
+  margin: auto;
+  max-width: 800px;
+}
+
+trix-editor {
+  min-height: 400px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 0 0 3px 3px;
+}
+
+trix-toolbar {
+  padding: 6px;
+  border-radius: 3px 3px 0px 0px;
+  border-top: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+}
+
+trix-toolbar .trix-button {
+  margin-right: 4px;
+  margin-left: 4px;
+  width: 2em;
+  border-radius: 4px;
+  transition: background-color .2s;
+}
+
+trix-toolbar .trix-button.trix-active {
+  background-color: #eee;
+}
+
+trix-toolbar .trix-button:hover {
+  background-color: #efefef;
+}
+
+trix-toolbar .trix-button:not(:first-child) {
+  border: none;
+}
+
+trix-toolbar .trix-button--icon {
+  border: none;
+}
+
+trix-toolbar .trix-button-group {
+  margin-bottom: 0;
+  border: none;
+}
+
+/** Share HTML style **/
+
+figure {
+  margin: 0;
+}
+
+
+h1 {
+  margin-top: 10px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
