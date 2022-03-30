@@ -12,7 +12,6 @@ function App() {
 
   const serialize = () => {
     const editor = getPlateEditorRef('mail-editor');
-    console.log(editor.children);
     const mail = htmlSerialize(editor.children);
     setMailContent(mail);
   };
