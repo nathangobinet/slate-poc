@@ -4,7 +4,6 @@ import {
   ELEMENT_H1,
   ELEMENT_H2,
   ELEMENT_H3,
-  ELEMENT_HR,
   ELEMENT_IMAGE,
   ELEMENT_PARAGRAPH,
   isBlockAboveEmpty,
@@ -106,7 +105,7 @@ const config = {
   selectOnBackspace: {
     options: {
       query: {
-        allow: [ELEMENT_IMAGE, ELEMENT_HR],
+        allow: [ELEMENT_IMAGE],
       },
     },
   },

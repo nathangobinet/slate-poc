@@ -1,9 +1,9 @@
-import { createFontBackgroundColorPlugin, createFontColorPlugin, createFontSizePlugin, createHorizontalRulePlugin, createIndentPlugin, createResetNodePlugin, createSelectOnBackspacePlugin } from "@udecode/plate";
+import { createFontBackgroundColorPlugin, createFontColorPlugin, createFontSizePlugin, createIndentPlugin, createResetNodePlugin, createSelectOnBackspacePlugin } from "@udecode/plate";
 import { createAlignPlugin } from "@udecode/plate-alignment";
 import { createBoldPlugin, createCodePlugin, createItalicPlugin, createUnderlinePlugin, createStrikethroughPlugin } from "@udecode/plate-basic-marks";
 import { createBlockquotePlugin } from "@udecode/plate-block-quote";
 import { createExitBreakPlugin, createSoftBreakPlugin } from "@udecode/plate-break";
-import { createDeserializeHtmlPlugin, createPlugins, Plate } from "@udecode/plate-core";
+import { createDeserializeHtmlPlugin, createPlugins, Plate, createPluginFactory } from "@udecode/plate-core";
 import { createHeadingPlugin } from "@udecode/plate-heading";
 import { createImagePlugin } from "@udecode/plate-image";
 import { createKbdPlugin } from "@udecode/plate-kbd";
@@ -40,7 +40,6 @@ function Editor(): JSX.Element {
     createUnderlinePlugin(),
     createStrikethroughPlugin(),
     createKbdPlugin(),
-    createHorizontalRulePlugin(),
     createFontSizePlugin(),
     createFontColorPlugin(),
     createFontBackgroundColorPlugin(),

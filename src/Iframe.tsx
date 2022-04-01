@@ -38,14 +38,6 @@ const mailStyle = `
   h1, h2, h3 {
     font-weight: normal;
   }
-  hr {
-    background-clip: content-box;
-    border-style: none;
-    height: 2px;
-    border-radius: 1px;
-    background-color: #ddd;
-  }
-
   p {
     margin: 0px;
     padding-top: 0.25rem;

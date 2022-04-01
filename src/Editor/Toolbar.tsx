@@ -1,34 +1,31 @@
-import {
-  Check,
-  Code,
-  FontDownload,
-  FormatAlignCenter,
-  FormatAlignJustify,
-  FormatAlignLeft,
-  FormatAlignRight,
-  FormatBold,
-  FormatColorText,
-  FormatIndentDecrease,
-  FormatIndentIncrease,
-  FormatItalic,
-  FormatListBulleted,
-  FormatListNumbered,
-  FormatQuote,
-  FormatStrikethrough,
-  FormatUnderlined,
-  HorizontalRule,
-  Image,
-  Link,
-  Looks3,
-  LooksOne,
-  LooksTwo
-} from "@mui/icons-material";
+
+import Check from '@mui/icons-material/Check';
+import Code from '@mui/icons-material/Code'
+import FontDownload from '@mui/icons-material/FontDownload';
+import FormatAlignCenter from '@mui/icons-material/FormatAlignCenter';
+import FormatAlignJustify from '@mui/icons-material/FormatAlignJustify';
+import FormatAlignLeft from '@mui/icons-material/FormatAlignLeft';
+import FormatAlignRight from '@mui/icons-material/FormatAlignRight';
+import FormatBold from '@mui/icons-material/FormatBold';
+import FormatColorText from '@mui/icons-material/FormatColorText';
+import FormatIndentDecrease from '@mui/icons-material/FormatIndentDecrease';
+import FormatIndentIncrease from '@mui/icons-material/FormatIndentIncrease';
+import FormatItalic from '@mui/icons-material/FormatItalic';
+import FormatListBulleted from '@mui/icons-material/FormatListBulleted';
+import FormatListNumbered from '@mui/icons-material/FormatListNumbered';
+import FormatQuote from '@mui/icons-material/FormatQuote';
+import FormatStrikethrough from '@mui/icons-material/FormatStrikethrough';
+import FormatUnderlined from '@mui/icons-material/FormatUnderlined';
+import Image from '@mui/icons-material/Image';
+import Link from '@mui/icons-material/Link';
+import Looks3 from '@mui/icons-material/Looks3';
+import LooksOne from '@mui/icons-material/LooksOne';
+import LooksTwo from '@mui/icons-material/LooksTwo';
 import {
   ELEMENT_BLOCKQUOTE,
   ELEMENT_H1,
   ELEMENT_H2,
   ELEMENT_H3,
-  ELEMENT_HR,
   ELEMENT_OL,
   ELEMENT_UL,
   getPluginType,
@@ -51,8 +48,7 @@ import {
   ListToolbarButton,
   MarkToolbarButton,
   usePlateEditorRef,
-} from '@udecode/plate'
-
+} from '@udecode/plate';
 
 function BasicElementToolbarButtons(): JSX.Element {
   const editor = usePlateEditorRef();
@@ -74,10 +70,6 @@ function BasicElementToolbarButtons(): JSX.Element {
       <BlockToolbarButton
         type={getPluginType(editor, ELEMENT_BLOCKQUOTE)}
         icon={<FormatQuote />}
-      />
-      <BlockToolbarButton
-        type={getPluginType(editor, ELEMENT_HR)}
-        icon={<HorizontalRule />}
       />
     </>
   );
