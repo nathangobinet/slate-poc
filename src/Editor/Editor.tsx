@@ -3,7 +3,7 @@ import { createAlignPlugin } from "@udecode/plate-alignment";
 import { createBoldPlugin, createCodePlugin, createItalicPlugin, createUnderlinePlugin, createStrikethroughPlugin } from "@udecode/plate-basic-marks";
 import { createBlockquotePlugin } from "@udecode/plate-block-quote";
 import { createExitBreakPlugin, createSoftBreakPlugin } from "@udecode/plate-break";
-import { createDeserializeHtmlPlugin, createPlugins, Plate, createPluginFactory } from "@udecode/plate-core";
+import { createDeserializeHtmlPlugin, createPlugins, Plate, deserializeHtml, createPlateEditor } from "@udecode/plate-core";
 import { createHeadingPlugin } from "@udecode/plate-heading";
 import { createImagePlugin } from "@udecode/plate-image";
 import { createKbdPlugin } from "@udecode/plate-kbd";
@@ -19,9 +19,10 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 
 import ToolBarButtons from './Toolbar';
 import config from './config';
-import { CSSProperties } from "react";
+import { CSSProperties, useMemo } from "react";
+import { createEditor } from "slate";
 
-function Editor(): JSX.Element {
+function Editor({ initialHtml }: { initialHtml?: string }): JSX.Element {
   const plugins = createPlugins([
     createParagraphPlugin(),
     createBlockquotePlugin(),
@@ -56,6 +57,15 @@ function Editor(): JSX.Element {
     components: config.components,
   });
 
+  const editor = createPlateEditor({editor: createEditor(), plugins });
+
+  const initialValue = useMemo(() => {
+    if (!initialHtml) return undefined;
+    const content = initialHtml.match(/(?<=<body>)((.|\n)*)(?=<\/body>)/);
+    if(!content) throw new Error('Invalid input format');
+    return deserializeHtml(editor, { element: content[0] });
+  }, [initialHtml]);
+
   const containerEditorStyle: CSSProperties = {
     border: 'solid 2px #e4e4e4',
     borderRadius: '4px',
@@ -66,8 +76,10 @@ function Editor(): JSX.Element {
       <DndProvider backend={HTML5Backend}>
         <Plate
           id="mail-editor"
+          editor={editor}
           plugins={plugins}
           editableProps={config.editableProps}
+          initialValue={initialValue}
         >
           <HeadingToolbar style={{ marginBottom: 0, padding: '5px', margin: 0 }}>
             <ToolBarButtons />

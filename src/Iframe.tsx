@@ -45,7 +45,7 @@ const mailStyle = `
     padding-left: 0px;
     padding-right: 0px;
   }
-`;
+`.replaceAll(' ', '').replaceAll('\n', '');
 
 export const Iframe = forwardRef<IframeForwardRef, IframeProps>(({ children }, ref) => {
   const [contentRef, setContentRef] = useState<HTMLIFrameElement>();
